@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <title>Focus Timer - Pomodoro</title>
+</head>
+<body>
+  <div id="app">
+    <button id="toggle-mode">
+      <span class="sr-only">Ativar Dark mode!</span>
+      <i class="ph-bold ph-sun"></i>
+      <i class="ph-bold ph-moon"></i>
+    </button>
+    
+    <div id="container">
+      <section id="timer">
+        <span id="minutes">00</span>
+        <span>:</span>
+        <span id="seconds">00</span>
+      </section>
+
+      <section id="controls">
+        <button>Iniciar musica</button>
+        <button>Parar musica</button>
+        <button>Aumentar volume</button>
+        <button>Diminuir Volume</button>
+      </section>
+
+      <section id="sounds">
+        <button>Sons da Natureza</button>
+        <button>Barulho de chuva</button>
+        <button>Cafeteria</button>
+        <button>Barulho de Lareira</button>
+      </section>
+
+    </div>  
+  </div>
+</body>
+</html>
