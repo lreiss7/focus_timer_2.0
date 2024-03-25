@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --heu: 194;
+  --bg-color: hsl(var(--heu), 0, 89%, 1); 
+  --text-color: hsl(var(--heu), 6%, 21%, 1);
+  --primary-color: hsl(var(--heu), 97%, 31%, 1);
+  --controls-bg-color: hsl(var(--heu), 9%, 89%, 1);
+
+  font-size: clamp(40%, 1% + 2vw, 62.5%);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
+  display: grid;
+  height: 100vh;
+  place-content: center;
+}
+
+.container {
+  display: flex;
+  gap: 12rem;
+}
+
+.flex{
+  display: flex;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+
+  cursor: pointer;
+}
+
+#app {
+  display: grid;
+  justify-items: center;
+  place-content: center; 
+}
+
+#timer {
+  font-size: 8rem;
+  font-weight: 500;
+  line-height: normal;
+  font-family: roboto;
+
+  place-self: center;
+
+}
+
+#controls {
+  display: flex;
+  gap: 2.5rem;
+
+  margin-top: 1.06rem;
+}
+
+#controls button img {
+  width: 3rem;
+  height: 3rem;
+}
+
+#sounds {
+  display: grid;
+  grid-template-areas:
+  "A B"
+  "C D";
+  gap: 2rem;
+}
+
+#sounds img {
+  width: 4rem;
+  height: 4rem;
+}
+
+.card {
+  width: 8.6rem;
+  height: 9.5rem;
+  flex-shrink: 0;
+
+  background-color: var(--controls-bg-color);
+
+  border-radius: 1.5rem;
+}
