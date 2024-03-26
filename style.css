@@ -5,15 +5,36 @@
 }
 
 :root {
-  --heu: 194;
-  --bg-color: hsl(var(--heu), 0, 89%, 1); 
-  --text-color: hsl(var(--heu), 6%, 21%, 1);
-  --primary-color: hsl(var(--heu), 97%, 31%, 1);
-  --controls-bg-color: hsl(var(--heu), 9%, 89%, 1);
+  --heu: 240;
+  --bg-color: hsl(var(--heu), 0%, 100%); 
+  --text-color: hsl(var(--heu), 6%, 21%);
+  --cards-bg-color: hsl(var(--heu), 9%, 89%);
+  --cards-secondary-color: hsl(194, 97%, 31%);
 
   font-size: clamp(40%, 1% + 2vw, 62.5%);
 }
 
+html.dark {
+  --bg-color: hsl(var(--heu), 8%, 8%);
+  --text-color: hsl(var(--heu), 0%, 100%);
+  --controls-bg-color: hsl(var(--heu), 9%, 89%);
+}
+
+html.dark .ph-moon,
+html:not(.dark) .ph-sun {
+  display: none;
+}
+
+#toggle-mode {
+  position: absolute;
+  right: 3.2rem;
+  top: 3.2rem;
+  font-size: 3rem;
+  line-height: 0;
+
+  color: var(--text-color);
+}
+  
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -35,7 +56,7 @@ body {
 button {
   background-color: transparent;
   border: 0;
-
+  
   cursor: pointer;
 }
 
@@ -52,17 +73,16 @@ button {
   font-family: roboto;
 
   place-self: center;
-
 }
 
 #controls {
   display: flex;
   gap: 2.5rem;
-
+  
   margin-top: 1.06rem;
 }
 
-#controls button img {
+#controls img {
   width: 3rem;
   height: 3rem;
 }
@@ -85,7 +105,11 @@ button {
   height: 9.5rem;
   flex-shrink: 0;
 
-  background-color: var(--controls-bg-color);
+  background-color: var(--cards-bg-color);
 
   border-radius: 1.5rem;
+} 
+
+.secondary {
+  background-color: var(--bg-color);
 }
