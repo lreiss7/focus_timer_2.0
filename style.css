@@ -10,6 +10,7 @@
   --text-color: hsl(var(--heu), 6%, 21%);
   --cards-bg-color: hsl(var(--heu), 9%, 89%);
   --cards-secondary-color: hsl(194, 97%, 31%);
+  --btn-hover-color: hsl(204, 95%, 59%);
 
   font-size: clamp(40%, 1% + 2vw, 62.5%);
 }
@@ -70,6 +71,17 @@ button {
   border: 0;
   
   cursor: pointer;
+
+  width: fit-content;
+  height: fit-content;
+
+  font-size: 3.5rem;
+
+  border: none;
+}
+
+#controls button:hover {
+  color: var(--btn-hover-color);
 }
 
 #app {
@@ -90,13 +102,8 @@ button {
 #controls {
   display: flex;
   gap: 2.5rem;
-  
-  margin-top: 1.06rem;
-}
 
-#controls img {
-  width: 3rem;
-  height: 3rem;
+  margin-top: 1rem;
 }
 
 #sounds {
@@ -107,7 +114,7 @@ button {
   gap: 2rem;
 }
 
-#sounds img {
+.card img {
   width: 4rem;
   height: 4rem;
 }
@@ -123,5 +130,13 @@ button {
 } 
 
 .secondary {
-  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* controls */
+
+.running .ph-play-circle,
+.running .ph-timer,
+html:not(.running) .ph-pause-circle {
+  display: none;
 }

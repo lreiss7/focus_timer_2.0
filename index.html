@@ -33,39 +33,61 @@
       </section>
       
       <section id="controls" class="flex">
-        <button>
-          <img src="./assets/play.svg" alt="botão de play">
+        <button 
+          data-action="toggleRunning"
+          class="ph ph-play-circle secondary">
+          <span class="sr-only">Iniciar contador</span>
         </button>
 
-        <button>
-          <img src="./assets/stop.svg" alt="botão de stop">
+        <button 
+          data-action="toggleRunning"
+          class="ph ph-pause-circle secondary">
+          <span class="sr-only">Pausar contador</span>
+        </button>
+
+        <button 
+          data-action="toggleReset"
+          class="ph ph-stop-circle secondary">
+          <span class="sr-only">parar contador</span>
         </button>
         
-        <button>
-          <img src="./assets/plus.svg" alt="adicionar tempo">
+        <button
+          data-action="toggleAdd"
+          class="ph ph-plus-circle secondary">
+          <span class="sr-only">adicionar tempo</span>
         </button>
         
-        <button>
-          <img src="./assets/minus.svg" alt="remover tempo">
+        <button
+          data-action="toggleRemove"
+          class="ph ph-minus-circle secondary">
+          <span class="sr-only">remover tempo</span>
         </button>
       </section>
     </div>  
   
     <section id="sounds">
-      <button class="card">
-        <img src="./assets/tree.svg" alt="ícone de uma árvore">  
+      <button class="card tree">
+        <label for="tree">
+          <i class="ph ph-tree"></i>
+        </label>
       </button>
 
-      <button class="card">
-        <img src="./assets/rain.svg" alt="icone nuvem de chuva">
+      <button class="card rain">
+        <label for="rain">
+          <i class="ph ph-cloud-rain"></i>
+        </label>
       </button>
       
-      <button class="card">
-        <img src="./assets/coffeeshop.svg" alt="ícone de uma cafeteria">
+      <button class="card store">
+        <label for="store">
+          <i class="ph ph-storefront"></i>
+        </label>
       </button>
 
-      <button class="card">
-        <img src="./assets/fireplace.svg" alt="ícone representando uma lareira">
+      <button class="card fire">
+        <label for="fire">
+          <i class="ph ph-fire"></i>
+        </label>
       </button>
     </section>            
   </div>
