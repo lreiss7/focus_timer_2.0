@@ -33,32 +33,35 @@
       </section>
       
       <section id="controls" class="flex">
-        <button 
+        <button
           data-action="toggleRunning"
           class="ph ph-play-circle secondary">
           <span class="sr-only">Iniciar contador</span>
         </button>
 
-        <button 
-          data-action="toggleRunning"
+        <button
+          id="pause"
+          data-action="pause"
           class="ph ph-pause-circle secondary">
           <span class="sr-only">Pausar contador</span>
         </button>
 
         <button 
-          data-action="toggleReset"
+          data-action="reset"
           class="ph ph-stop-circle secondary">
           <span class="sr-only">parar contador</span>
         </button>
         
         <button
-          data-action="toggleAdd"
+          id="plus" 
+          data-action="plus"
           class="ph ph-plus-circle secondary">
           <span class="sr-only">adicionar tempo</span>
         </button>
         
         <button
-          data-action="toggleRemove"
+          id="minus"
+          data-action="minus"
           class="ph ph-minus-circle secondary">
           <span class="sr-only">remover tempo</span>
         </button>
@@ -66,25 +69,29 @@
     </div>  
   
     <section id="sounds">
-      <button class="card tree">
+      <button class="button tree">
+        <input type="checkbox" id="tree" data-theme="tree"/>
         <label for="tree">
           <i class="ph ph-tree"></i>
         </label>
       </button>
 
-      <button class="card rain">
+      <button class="button rain">
+        <input type="checkbox" id="rain" data-theme="rain"/>
         <label for="rain">
           <i class="ph ph-cloud-rain"></i>
         </label>
       </button>
       
-      <button class="card store">
+      <button class="button store">
+        <input type="checkbox" id="store" data-theme="coffeeStore"/>
         <label for="store">
           <i class="ph ph-storefront"></i>
         </label>
       </button>
 
-      <button class="card fire">
+      <button class="button fire">
+        <input type="checkbox" id="fire" data-theme="fire"/>
         <label for="fire">
           <i class="ph ph-fire"></i>
         </label>

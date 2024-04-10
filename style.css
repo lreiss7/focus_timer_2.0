@@ -2,15 +2,21 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  text-decoration: none;
+
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
 }
 
 :root {
   --heu: 240;
   --bg-color: hsl(var(--heu), 0%, 100%); 
   --text-color: hsl(var(--heu), 6%, 21%);
-  --cards-bg-color: hsl(var(--heu), 9%, 89%);
-  --cards-secondary-color: hsl(194, 97%, 31%);
+  --button-bg-color: hsl(var(--heu), 4%, 31%);
+  --cards-secondary-color: hsl(200, 4%, 31%);
   --btn-hover-color: hsl(204, 95%, 59%);
+  --disabled-color: #a8a8a8;
 
   font-size: clamp(40%, 1% + 2vw, 62.5%);
 }
@@ -24,6 +30,10 @@ html.dark {
 html.dark .ph-moon,
 html:not(.dark) .ph-sun {
   display: none;
+}
+
+.secondary {
+  color: var(--controls-bg-color);
 }
 
 #toggle-mode {
@@ -66,23 +76,7 @@ body {
   display: flex;
 }
 
-button {
-  background-color: transparent;
-  border: 0;
-  
-  cursor: pointer;
 
-  width: fit-content;
-  height: fit-content;
-
-  font-size: 3.5rem;
-
-  border: none;
-}
-
-#controls button:hover {
-  color: var(--btn-hover-color);
-}
 
 #app {
   display: grid;
@@ -91,21 +85,49 @@ button {
 }
 
 #timer {
-  font-size: 8rem;
-  font-weight: 500;
+  font-size: 10rem;
   line-height: normal;
-  font-family: roboto;
-
+  
   place-self: center;
 }
 
+/* Controls button */
 #controls {
   display: flex;
   gap: 2.5rem;
-
+  
   margin-top: 1rem;
 }
 
+button {
+  display: flex;
+  background-color: transparent;
+  border: 0;
+  
+  cursor: pointer;
+
+  width: fit-content;
+  height: fit-content;
+
+  font-size: 4.5rem;
+
+  border: none;
+}
+
+#controls button:hover {
+  color: var(--btn-hover-color);
+}
+
+.running #plus,
+.running #minus,
+.paused #plus,
+.paused #minus {
+  color: var(--disabled-color);
+  cursor: not-allowed;
+  pointer-events: none; 
+}
+
+/* Sounds button */
 #sounds {
   display: grid;
   grid-template-areas:
@@ -114,24 +136,44 @@ button {
   gap: 2rem;
 }
 
-.card img {
-  width: 4rem;
-  height: 4rem;
+#sounds button:hover {
+  opacity: 95%;
+  transition-delay: 200ms;
 }
 
-.card {
-  width: 8.6rem;
-  height: 9.5rem;
-  flex-shrink: 0;
+#sounds .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  background-color: var(--cards-bg-color);
+  position: relative;
+  border-radius: 2rem;
 
-  border-radius: 1.5rem;
-} 
-
-.secondary {
-  color: var(--text-color);
+  background: var(--button-bg-color);
 }
+
+#sounds .button label {
+  height: 40%;
+  position: absolute;
+  left: auto;
+  cursor: pointer;
+
+  font-size: 5rem;
+  color: white;
+}
+
+#sounds .button input[type="checkbox"]:checked {
+  background: var(--btn-hover-color);
+  border-radius: 2rem;
+}
+
+#sounds .button input[type="checkbox"] {
+  width: 13rem;
+  height: 13rem;
+  appearance: none;
+  cursor: pointer;
+}
+
 
 /* controls */
 
@@ -140,3 +182,4 @@ button {
 html:not(.running) .ph-pause-circle {
   display: none;
 }
+
