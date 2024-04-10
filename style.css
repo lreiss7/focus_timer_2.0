@@ -85,7 +85,7 @@ body {
 }
 
 #timer {
-  font-size: 10rem;
+  font-size: 11rem;
   line-height: normal;
   
   place-self: center;
@@ -94,9 +94,9 @@ body {
 /* Controls button */
 #controls {
   display: flex;
-  gap: 2.5rem;
+  gap: 3rem;
   
-  margin-top: 1rem;
+  margin-top: 0;
 }
 
 button {
@@ -137,7 +137,7 @@ button {
 }
 
 #sounds button:hover {
-  opacity: 95%;
+  opacity: 90%;
   transition-delay: 200ms;
 }
 
@@ -183,3 +183,13 @@ html:not(.running) .ph-pause-circle {
   display: none;
 }
 
+/* Responsividade */
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  
+    margin: 2rem;
+    gap: 5rem;
+  }
+}
