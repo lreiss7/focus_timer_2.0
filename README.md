@@ -1,10 +1,5 @@
 <h1 align="center">
-<img alt="Pomodoro" 
-src="assets/favicon.svg"
-width=20%>
-
-Timer Pomodoro
-
+Focus Timer 2.0
 </h1>
 
 <p align="center">
