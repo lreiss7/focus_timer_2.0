@@ -2,6 +2,7 @@ import state from './state.js'
 import * as timer from './timer.js'
 import { plusButton, minusButton } from './elements.js'
 
+// CONTROLS
 export function toggleRunning() {
   state.isRunning = true
   document.documentElement.classList.toggle('running') 
@@ -28,7 +29,7 @@ export function reset() {
   document.documentElement.classList.remove('running')
   document.documentElement.classList.remove('paused')
 
-  plusButton.disabled = false
+  plusButton.disabled = state.isRunning
   minusButton.disabled = state.isRunning
 
   timer.updateDisplay()
@@ -49,7 +50,13 @@ export function minus() {
     return
   }
 
-  state.minutes = Math.max(Number(state.minutes) - 1, 1)
+  state.minutes = Math.max(Number(state.minutes) - 5, 5)
 
   timer.updateDisplay()
 }
+
+
+
+
+
+

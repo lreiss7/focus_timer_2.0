@@ -33,64 +33,51 @@
       </section>
       
       <section id="controls" class="flex">
-        <button
-          data-action="toggleRunning"
-          class="ph ph-play-circle secondary">
+        <button data-action="toggleRunning" class="ph ph-play-circle secondary">
           <span class="sr-only">Iniciar contador</span>
         </button>
 
-        <button
-          id="pause"
-          data-action="pause"
-          class="ph ph-pause-circle secondary">
+        <button id="pause" data-action="pause" class="ph ph-pause-circle secondary">
           <span class="sr-only">Pausar contador</span>
         </button>
 
-        <button 
-          data-action="reset"
-          class="ph ph-stop-circle secondary">
+        <button data-action="reset" class="ph ph-stop-circle secondary">
           <span class="sr-only">parar contador</span>
         </button>
         
-        <button
-          id="plus" 
-          data-action="plus"
-          class="ph ph-plus-circle secondary">
+        <button id="plus" data-action="plus" class="ph ph-plus-circle secondary">
           <span class="sr-only">adicionar tempo</span>
         </button>
         
-        <button
-          id="minus"
-          data-action="minus"
-          class="ph ph-minus-circle secondary">
+        <button id="minus" data-action="minus" class="ph ph-minus-circle secondary">
           <span class="sr-only">remover tempo</span>
         </button>
       </section>
     </div>  
   
     <section id="sounds">
-      <button class="button tree">
+      <button class="button tree" title="Ativar som da árvore">
         <input type="checkbox" id="tree" data-theme="tree"/>
         <label for="tree">
           <i class="ph ph-tree"></i>
         </label>
       </button>
 
-      <button class="button rain">
+      <button class="button rain" title="Ativar som da chuva">
         <input type="checkbox" id="rain" data-theme="rain"/>
         <label for="rain">
           <i class="ph ph-cloud-rain"></i>
         </label>
       </button>
       
-      <button class="button store">
-        <input type="checkbox" id="store" data-theme="coffeeStore"/>
+      <button class="button store" title="Ativar som da cafeteria">
+        <input type="checkbox" id="store" data-theme="store"/>
         <label for="store">
           <i class="ph ph-storefront"></i>
         </label>
       </button>
 
-      <button class="button fire">
+      <button class="button fire" title="Ativar som do fogo">
         <input type="checkbox" id="fire" data-theme="fire"/>
         <label for="fire">
           <i class="ph ph-fire"></i>

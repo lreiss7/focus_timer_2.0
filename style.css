@@ -118,13 +118,13 @@ button {
   color: var(--btn-hover-color);
 }
 
+
 .running #plus,
 .running #minus,
 .paused #plus,
 .paused #minus {
   color: var(--disabled-color);
-  cursor: not-allowed;
-  pointer-events: none; 
+  pointer-events: none;
 }
 
 /* Sounds button */

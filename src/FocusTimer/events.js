@@ -11,3 +11,22 @@ export function registerControls () {
     actions[action]()
   })
 }
+
+export function registerSoundsControls () {
+  controls.addEventListener('change', (event) => {
+    const clickedElement = event.target
+
+    if (clickedElement.tagName !== 'INPUT' || !clickedElement.type === 'checkbox'){
+      return
+    }
+
+    const theme = clickedElement.dataset.theme
+    const isChecked = clickedElement.checked
+
+    if (isChecked) {
+      actions.playTheme(theme)
+    } else {
+      actions.stopSound(theme)
+    }
+  })
+}
