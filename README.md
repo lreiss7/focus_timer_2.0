@@ -10,7 +10,7 @@ Timer Pomodoro
 <p align="center">
 <img 
   alt="imagem do projeto" 
-  src="assets/dark-mode.png">
+  src="assets/view.gif">
 </p>
 
 ## 🚀 Tecnologias
