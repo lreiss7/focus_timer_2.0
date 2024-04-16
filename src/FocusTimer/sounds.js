@@ -1,5 +1,3 @@
-
-
 export function playTheme(theme) {
   if(!sounds[theme]) {
     console.error(`Sound not fond: ${theme}`)
@@ -8,12 +6,15 @@ export function playTheme(theme) {
   
   const selectAudio = sounds[theme].audio
   selectAudio.currentTime = 0
+  selectAudio.loop = true
   
   selectAudio.play()
 }
 
 export function stopSound(theme) {
   if (sounds[theme]) {
+    const selectAudio = sounds[theme].audio
+    selectAudio.loop = false
     sounds[theme].audio.pause()
     sounds[theme].audio.currentTime = 0
   }
