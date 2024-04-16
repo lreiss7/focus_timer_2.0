@@ -1,30 +1,36 @@
 let lightMode = true
 const buttonToggle = document.getElementById('toggle-mode')
 
-function toggleMode() {
-  lightMode = !lightMode
+function upateUI() {
   document.documentElement.classList.toggle('dark', !lightMode)
 
-  const modeText = lightMode ? 'Dark mode ativado!' : 'Light mode ativado!'
+  const modeText = lightMode ? 'Light mode ativado!' : 'Dark mode ativado!'
   buttonToggle.querySelector('span').textContent = modeText
+}
+
+function saveMode() {
+  localStorage.setItem('lightMode', lightMode.toString())
+}
+
+function toggleMode() {
+  lightMode = !lightMode
+  upateUI()
   saveMode()
 }
 
 buttonToggle.addEventListener('click', toggleMode)
 
-const savedMode = localStorage.getItem('lightMode')
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  lightMode = false
-} else if (savedMode !== null) {
-  lightMode = savedMode === 'true'
+function ckeckSaveMode() {
+  const savedMode = localStorage === 'true'
+
+  if (savedMode !== null) {
+    lightMode = savedMode === 'true'
+  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    lightMode = false
+  } else {
+    lightMode = true
+  }
 }
 
-if (!savedMode) {
-  toggleMode()
-}
-
-function saveMode() {
-  localStorage.setItem('lightMode', lightMode)
-}
-
-window.addEventListener('beforeunload', saveMode)
+ckeckSaveMode()
+upateUI()
