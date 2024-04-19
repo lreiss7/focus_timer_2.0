@@ -6,6 +6,9 @@ import { plusButton, minusButton } from './elements.js'
 export function toggleRunning() {
   state.isRunning = true
   document.documentElement.classList.toggle('running') 
+
+  plusButton.classList.add('disabled')
+  minusButton.classList.add('disabled')
   
   plusButton.disabled = state.isRunning
   minusButton.disabled = state.isRunning
@@ -17,10 +20,12 @@ export function pause() {
   state.isRunning = false
   document.documentElement.classList.remove('running')
   document.documentElement.classList.add('paused')
+
+  plusButton.classList.add('disabled')
+  minusButton.classList.add('disabled')
   
   plusButton.disabled = !state.isRunning
   minusButton.disabled = !state.isRunning
-
 }
 
 export function reset() {
@@ -31,6 +36,9 @@ export function reset() {
 
   plusButton.disabled = state.isRunning
   minusButton.disabled = state.isRunning
+
+  plusButton.classList.remove('disabled') 
+  minusButton.classList.remove('disabled')
 
   timer.updateDisplay()
 }
