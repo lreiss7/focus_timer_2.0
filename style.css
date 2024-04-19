@@ -76,8 +76,6 @@ body {
   display: flex;
 }
 
-
-
 #app {
   display: grid;
   justify-items: center;
@@ -118,18 +116,18 @@ button {
   color: var(--btn-hover-color);
 }
 
-/* .running #plus,
-.running #minus,
-.paused #plus,
-.paused #minus {
-  color: var(--disabled-color);
-  cursor: not-allowed;
-} */
-
+#plus.disabled,
+#minus.disabled,
 #plus.disabled:hover,
 #minus.disabled:hover {
   color: var(--disabled-color);
   cursor: not-allowed;
+}
+
+.running .ph-play-circle,
+.running .ph-timer,
+html:not(.running) .ph-pause-circle {
+  display: none;
 }
 
 /* Sounds button */
@@ -179,17 +177,7 @@ button {
   cursor: pointer;
 }
 
-
-/* controls */
-
-.running .ph-play-circle,
-.running .ph-timer,
-html:not(.running) .ph-pause-circle {
-  display: none;
-}
-
 /* Responsividade */
-
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
