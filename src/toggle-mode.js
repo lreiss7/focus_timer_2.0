@@ -1,7 +1,7 @@
 let lightMode = true
 const buttonToggle = document.getElementById('toggle-mode')
 
-function upateUI() {
+function updateUI() {
   document.documentElement.classList.toggle('dark', !lightMode)
 
   const modeText = lightMode ? 'Light mode ativado!' : 'Dark mode ativado!'
@@ -14,14 +14,14 @@ function saveMode() {
 
 function toggleMode() {
   lightMode = !lightMode
-  upateUI()
+  updateUI()
   saveMode()
 }
 
 buttonToggle.addEventListener('click', toggleMode)
 
 function ckeckSaveMode() {
-  const savedMode = localStorage === 'true'
+  const savedMode = localStorage.getItem('lightMode')
 
   if (savedMode !== null) {
     lightMode = savedMode === 'true'
@@ -30,7 +30,16 @@ function ckeckSaveMode() {
   } else {
     lightMode = true
   }
+  updateUI()
 }
 
 ckeckSaveMode()
-upateUI()
+
+if (window.matchMedia) {
+  const colorSchemeListener = (e) => {
+    lightMode = !e.matches
+    updateUI()
+  }
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', colorSchemeListener)
+}
