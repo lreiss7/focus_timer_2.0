@@ -43,3 +43,5 @@ if (window.matchMedia) {
 
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', colorSchemeListener)
 }
+
+ckeckSaveMode()
